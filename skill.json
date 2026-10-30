@@ -1,0 +1,10 @@
+{
+  "name": "genpark-accio-csuite-manager",
+  "version": "1.0.0",
+  "description": "GenPark Accio C-Suite Manager - Corporate OKR strategic alignment DAG solver, capital expenditure hurdle IRR/NPV evaluator, and board briefing executive summary composer with zero dependencies.",
+  "tools": [
+    "resolve_okr_alignment_dag",
+    "calculate_capex_npv_and_irr",
+    "synthesize_executive_brief_matrix"
+  ]
+}
