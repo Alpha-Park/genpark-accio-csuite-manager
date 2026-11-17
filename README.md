@@ -3,10 +3,10 @@
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
-![Dependencies](https://img.shields.io/badge/dependencies-zero-success)
+![MCP SDK](https://img.shields.io/badge/MCP-SDK_Required-blue)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)
 
-GenPark Accio C-Suite Manager is a zero-dependency executive decision-support and corporate governance engine implementing hierarchical OKR progress DAG alignment, capital expenditure financial hurdle rate analysis (Net Present Value NPV and Internal Rate of Return IRR), and board briefing synthesis matrices.
+GenPark Accio C-Suite Manager provides a standard-library executive decision-support and corporate governance engine implementing hierarchical OKR progress DAG alignment, capital expenditure financial hurdle rate analysis (Net Present Value NPV and Internal Rate of Return IRR), and board briefing synthesis matrices.
 
 ```mermaid
 flowchart TD
@@ -31,6 +31,23 @@ from client import GenParkAccioCSuiteManager
 csuite = GenParkAccioCSuiteManager()
 res = csuite.calculate_capex_npv_and_irr(100000.0, [30000, 40000, 50000, 60000], 0.12)
 print("NPV:", res["net_present_value_usd"], "IRR:", res["internal_rate_of_return_pct"])
+```
+
+## MCP Setup
+
+The core Python client uses only the standard library. Running the MCP server requires **Python 3.10+** and the official **`mcp>=1.0.0,<2` SDK**. From the repository directory:
+
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+On Windows, use `.venv\Scripts\python.exe` instead. Configure the MCP client to use this environment's Python executable. The server runs locally over stdio; the GitHub repository URL is not a remote MCP endpoint.
+
+Start the server from the repository directory:
+
+```bash
+.venv/bin/python mcp_server.py
 ```
 
 ## License
