@@ -51,8 +51,7 @@ def synthesize_executive_brief_matrix(
     return json.dumps(res, indent=2)
 
 def main():
-    print("Testing C-Suite Manager:")
-    print(calculate_capex_npv_and_irr(100000.0, "[30000, 40000, 50000, 60000]", 0.10))
+    mcp.run(transport="stdio")
 
 if __name__ == "__main__":
     main()
